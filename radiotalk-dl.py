@@ -58,7 +58,7 @@ class RadiotalkDl(object):
         program = self.get_program(program_id)
         tm = time.strptime(program['createdAt'], '%Y-%m-%d %H:%M:%S')
         program_timestamp = time.mktime(tm)
-        program_timestamp_str = "%04d-%04d-%04d" % (tm.tm_year, tm.tm_mon, tm.tm_mday)
+        program_timestamp_str = "%04d-%02d-%02d" % (tm.tm_year, tm.tm_mon, tm.tm_mday)
         program_name = self.get_program_name(program, program_timestamp_str)
         self.download(self.get_audio_url(program), program_name, program_timestamp)
 

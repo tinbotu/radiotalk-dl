@@ -4,6 +4,8 @@
 
 this is a downloader like youtube-dl for https://radiotalk.jp/ 
 
+You can download the Radio as `m4a` file without re-encoding.
+
 
 ## Requirements
 
@@ -25,7 +27,7 @@ this is a downloader like youtube-dl for https://radiotalk.jp/
    ```sh
    $ make setup
    ```
-   or satisty requirements.txt, edit shebang
+   if you don't want to use `venv`, you can just rewrite shebang without setting up `venv`, though you have to satisty requirements.txt
 
 
 1. mkdir output directory
@@ -69,5 +71,3 @@ $ ls -l data/
 ## License
 
 MIT
-
-

@@ -11,6 +11,7 @@ You can download the Radio as `m4a` file without re-encoding.
 
 - Python3
     - venv
+	- requests
 
 ## how to setup
 

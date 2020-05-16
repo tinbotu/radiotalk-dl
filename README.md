@@ -66,7 +66,7 @@ $ ls -l data/
 
 ## uninstall
 
-1. remote working directory that git clone
+1. delete working directory that git clone
 
 
 ## License

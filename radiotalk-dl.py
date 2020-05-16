@@ -29,14 +29,13 @@ class RadiotalkDl(object):
             self.program_id = int(m.group(1))
             return int(m.group(1))
         else:
-            raise
+            raise ValueError("Can't extract programid")
 
 
     def get_program(self, program_id):
         url = (self._api_url % (program_id))
         r = requests.get(url)
-        j = json.loads(r.text)
-        return j
+        return json.loads(r.text)
 
 
     def get_program_name(self, p, timestamp: str):
@@ -70,4 +69,7 @@ if __name__ == '__main__':
     dl = RadiotalkDl()
     for url in sys.argv:
         if('http' in url):
-            print(dl.get_audio(url))
+            try:
+                print(dl.get_audio(url))
+            except ValueError as e:
+                print("%s: %s" % (e, url))

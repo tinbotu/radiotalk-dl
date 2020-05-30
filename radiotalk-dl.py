@@ -52,8 +52,7 @@ class RadiotalkDl(object):
         os.utime(filename, (timestamp, timestamp))
 
 
-    def download(self, url: str, program_name: str, timestamp: float):
-        filename = self.outdir + "/%s.m4a" % (program_name)
+    def download(self, url: str, filename: str, timestamp: float):
         r = requests.get(url)
         self.write_as_file(filename, r.content, timestamp)
 
@@ -67,7 +66,8 @@ class RadiotalkDl(object):
         program_timestamp_str = "%04d-%02d-%02d" % (tm.tm_year, tm.tm_mon, tm.tm_mday)
         program_name = self.get_program_name(program, program_timestamp_str)
 
-        self.download(self.get_audio_url(program), program_name, program_timestamp)
+        audio_filename = self.outdir + "/%s.m4a" % (program_name)
+        self.download(self.get_audio_url(program), audio_filename, program_timestamp)
 
         return program_name
 

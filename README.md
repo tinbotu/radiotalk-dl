@@ -40,8 +40,11 @@ You can download the Radio as `m4a` file without re-encoding.
 
 ## run
 
-usage: radiotalk-dl.py url [url2] [url3]...
-
+usage: radiotalk-dl.py [OPTIONS] url [url2] [url3]...
+  [OPTIONS]
+    -o --outdir=./path/to/output/directory
+    -v --verbose
+    -m --download-meta\n
 
 ## sample
 

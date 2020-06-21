@@ -31,21 +31,14 @@ You can download the Radio as `m4a` file without re-encoding.
    if you don't want to use `venv`, you can just rewrite shebang without setting up `venv`, though you have to satisty requirements.txt
 
 
-1. mkdir output directory
-
-   ```sh
-   $ mkdir -p data
-   ```
-   or edit `RadiotalkDl.outdir` in `radiotalk-dl.py`
-
 ## run
-
+```
 usage: radiotalk-dl.py [OPTIONS] url [url2] [url3]...
   [OPTIONS]
     -o --outdir=./path/to/output/directory
     -v --verbose
-    -m --download-meta\n
-
+    -m --download-meta
+```
 ## sample
 
 

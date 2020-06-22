@@ -53,20 +53,20 @@ class RadiotalkDl(object):
         return p['imageUrl']
 
 
-    def write_as_file(self, filename: str, content: str, timestamp: float):
+    def write_as_file(self, filename: str, content, timestamp: float) -> None:
         if type(content) is str:
             mode = "w"
         else:
             mode = "wb"
 
-        self.message("write %s %s" % (mode, filename, ))
+        self.message("write %s %s" % (mode, filename))
 
         with open(filename, mode) as fp:
             fp.write(content)
         os.utime(filename, (timestamp, timestamp))
 
 
-    def download(self, url: str, filename: str, timestamp: float):
+    def download(self, url: str, filename: str, timestamp: float) -> None:
         self.message("Downloading: %s" % url)
         r = requests.get(url)
         self.write_as_file(filename, r.content, timestamp)
@@ -101,13 +101,12 @@ class RadiotalkDl(object):
                 "  -v --verbose\n"
                 "  -m --download-meta\n"
                 "e.g. %s -m https://radiotalk.jp/talk/248986 https://radiotalk.jp/talk/2797"
-                % (me, me, ))
+                % (me, me))
 
 
     def message(self, message: str) -> None:
         if self.verbose > 1:
             print(message, file=sys.stderr)
-
 
 
 if __name__ == '__main__':

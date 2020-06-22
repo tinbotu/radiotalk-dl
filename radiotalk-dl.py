@@ -140,6 +140,7 @@ if __name__ == '__main__':
                 message = dl.get_audio(url)
                 if type(message) is str:
                     succeed += 1
+                print(message)
             except ValueError as e:
                 print("%s: %s" % (e, url))
 

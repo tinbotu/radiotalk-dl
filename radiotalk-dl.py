@@ -85,10 +85,10 @@ class RadiotalkDl(object):
         self.download(self.get_audio_url(program), audio_filename, program_timestamp)
 
         if self.download_meta:
-            meta_filename = self.outdir + "%s.json" % (program_name)
+            meta_filename = self.outdir + "/%s.json" % (program_name)
             self.write_as_file(meta_filename, json.dumps(program, indent=2, ensure_ascii=False), program_timestamp)
 
-            image_filename = self.outdir + "%s.jpg" % program_name
+            image_filename = self.outdir + "/%s.jpg" % program_name
             self.download(self.get_image_url(program), image_filename, program_timestamp)
 
         return program_name

@@ -44,10 +44,9 @@ usage: radiotalk-dl.py [OPTIONS] url [url2] [url3]...
 
 ```sh
 $ cd ~/workspace/radiotalk-dl
-$ ./radiotalk-dl.py -m ./out https://radiotalk.jp/talk/2797 https://radiotalk.jp/talk/248986
+$ ./radiotalk-dl.py -o ./data https://radiotalk.jp/talk/2797 https://radiotalk.jp/talk/248986
 運コミュ！（Radiotalk運営の公式番組） - 2797 第0回 運コミュって何だ？（雑談） (2017-10-13)
 波よ聞いてくれ～Wave, Listen to me!～ - 248986 [4-2] ミナレの1つ1つのセリフが長い...！アニメ『波よ聞いてくれ』の制作エピソード (2020-03-28)
-$ 
 ```
 
 

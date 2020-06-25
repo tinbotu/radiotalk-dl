@@ -134,7 +134,7 @@ if __name__ == '__main__':
 
 
     succeed = 0
-    for url in sys.argv:
+    for url in args:
         if('http' in url):
             try:
                 message = dl.get_audio(url)

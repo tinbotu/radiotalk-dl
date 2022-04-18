@@ -65,6 +65,14 @@ class RadiotalkDl(object):
             fp.write(content)
         os.utime(filename, (timestamp, timestamp))
 
+        # creation timestamp modification on Microsoft Windows
+        if os.name == 'nt':
+            try:
+                import win32_setctime
+                win32_setctime.setctime(filename, timestamp)
+            except ModuleNotFoundError:
+                print("- - - -\nPlease consider to install win32_setctime\ne.g.\nPS> pip install win32_setctime\n")
+
 
     def download(self, url: str, filename: str, timestamp: float) -> None:
         self.message("Downloading: %s" % url)
